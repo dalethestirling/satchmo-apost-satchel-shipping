@@ -1,0 +1,53 @@
+                   _ _     _           _   _                         
+ ___ _ _ ___ ___ _| |_|___| |_ ___ ___| |_|_|___ ___   ___ ___ _____ 
+| . | | |  _| -_| . | |_ -|  _| . |  _|  _| | . |   |_|  _| . |     |
+|  _|___|_| |___|___|_|___|_| |___|_| |_| |_|___|_|_|_|___|___|_|_|_|
+|_|                                                                  
+
+satchmo-apost-sachel-shipping
+Dale Stirling
+Ver 1.1
+
+
+This is a Satchmo shipping module that calcultes the shipping based on the required amount of Australia post fixed price Satchels. 
+
+
+satchmo-apost-satchel-shipping contains the following functionality:
+	- Configuration for proces for 500g and 3kg shipping satchels
+	- Single item free shipping 
+
+
+
+INSTALLATION
+============
+
+Installation requires the following steps:
+
+- Download from
+- Extract the files into the root directory of our Satchmo Project
+- Change the permissions and ownership to allow execution of the scripts within your project
+- Add '<project name>.satchmo-apost-satchel-shipping' to the INSTALLED_APPS
+- Add 'CUSTOM_SHIPPING_MODULES' : ['<project name >.satchmo-apost-satchel-shipping']) to the SATCHMO_SETTINGS dictionary in settings.py
+- Restart the webserver of your project
+
+You will now bw able to configure your shipping module by loggin into the admin of your project in the Edit site settings section.
+
+
+HOW TO USE
+==========
+Once you have successfuly installed the APP to your Satchmo project Log into /admin and goto 'Edit Settings'. 
+
+Also all products in your Satchmo store should have there weights specified in the definition. The weight should be expressed in a 
+decimal reprecentation of KG (ie a 500g weight would be 0.5).
+
+You should now see the module added to your settings. 
+
+These settings allow you to set the price for the 500g and less satchel and the 500g to 3kg satchel. This can be either 
+as a decimal value (ie $3 would be 3.00). The module will work out how many satchels are required and bill accordingly.
+
+The 'Free ship for single item' text field shoudl contain any sku names of products that you wish to have a shipping cost of 0 if they are 
+the only item in the order. Where orders contain more than this item the products weight will be used to calculate shipping as normal.
+
+
+
+
